@@ -3,31 +3,27 @@
 \alias{RVertica}
 \docType{package}
 \title{
-  A short title line describing what the package does
+  This Package Provides Access to Vertica from R
 }
 \description{
-  A more detailed description of what the package does. A length
-  of about one to five lines is recommended.
+  Work in progress. We aim to be faster than the Python-based package
+  released by Uber, and less cumbersome to use than the official
+  RJDBC-based access.
 }
 \details{
-  This section should provide a more detailed overview of how to use the
-  package, including the most important functions.
+  We use the following environment variable when the package is
+  attached: \code{VERTICAHOST}, \code{VERTICAPORT},
+  \code{VERTICADATABASE}, \code{VERTICAUSER}, \code{VERTICAPASSWORD} and
+  \code{VERTICAJARPATH}. 
 }
 \author{
-Who wrote it, email optional.
+Dirk Eddelbuettel
 
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 }
-\references{
-  This optional section can contain literature or other references for
-  background information.
-}
-% Optionally other standard keywords, one per line,
-% from the file KEYWORDS in the R documentation.
 \keyword{ package }
-\seealso{
-  Optional links to other man pages
-}
 \examples{
-  # Optional simple examples of the most important functions
+\dontrun{
+    getDataRPostgreSQL("select * from product_dimension limit 5;")
+}
 }

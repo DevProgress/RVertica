@@ -1,1 +1,6 @@
 exportPattern("^[[:alpha:]]+")
+
+importFrom("rbenchmark", "benchmark")
+importFrom("RPostgreSQL", "dbConnect", "dbGetQuery", "dbDisconnect")
+importFrom("DBI", "dbDriver")
+importFrom("utils", "read.csv")
