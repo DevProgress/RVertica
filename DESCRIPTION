@@ -1,14 +1,15 @@
 Package: RVertica
 Type: Package
 Title: Lightweight Connections to Vertica
-Version: 0.0.1
-Date: 2016-08-02
+Version: 0.0.2
+Date: 2016-08-03
 Author: Dirk Eddelbuettel
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: 'Vertica' provides ODBC and JDBC connectivity. This package
  attempts to offer a lighter alternative based on `psql` (or `vsql`).
  The 'RJDBC' based approach can use as a fallback and for comparison.    
 Suggests: RJDBC
+Imports: rbenchmark, RPostgreSQL, DBI
 OS_type: unix
 SystemRequirements: The 'psql' binary has to be in your PATH.
 License: GPL (>= 2)
