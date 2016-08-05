@@ -1,8 +1,8 @@
 Package: RVertica
 Type: Package
 Title: Lightweight Connections to Vertica
-Version: 0.0.2
-Date: 2016-08-03
+Version: 0.0.3
+Date: 2016-08-05
 Author: Dirk Eddelbuettel
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: 'Vertica' provides ODBC and JDBC connectivity. This package

@@ -76,3 +76,28 @@ getDataRPostgreSQL <- function(sqlquery) {
     options(warn=ow)
     invisible(dat)
 }
+
+##' Run a sample query against Vertica using the Python-Vertica
+##' package.
+##'
+##' The Python installation must have the Python-Vertica package
+##' contributed by Uber. There is essentially no error handling. This
+##' function is really only here for completeness and not recommended.
+##' The rPython package could be used as well.
+##' @title Run Sample Query via Python
+##' @param sqlquery A SQL query as character string
+##' @return The dataset corresponding to the query.
+##' @author Dirk Eddelbuettel
+getDataPython <- function(sqlquery) {
+
+    ## the script is part of this package
+    script <- system.file("scripts", "runSQLviaPython.py", package="RVertica")
+
+    ## python is assumed in the path, and also assumed to have the
+    ## proper Vertica package
+    cmd <- sprintf("python %s '%s'", script, sqlquery)
+
+    dat <- read.csv(file=pipe(cmd))
+
+    invisible(dat)
+}
