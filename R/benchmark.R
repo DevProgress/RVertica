@@ -10,6 +10,9 @@
 runBenchmarks <- function(query="SELECT * FROM product_dimension LIMIT 10000;") {
     res <- benchmark(getDataPSQL(query),
                      getDataJDBC(query),
-                     getDataRPostgreSQL(query))
-    res[,1:4]
+                     getDataRPostgreSQL(query),
+                     getDataPython(query),
+                     order="relative",
+                     columns=c("test", "replications", "elapsed", "relative"))
+    res
 }
