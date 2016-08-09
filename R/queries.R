@@ -97,7 +97,7 @@ getDataPython <- function(sqlquery) {
     ## proper Vertica package
     cmd <- sprintf("python %s '%s'", script, sqlquery)
 
-    dat <- read.csv(file=pipe(cmd))
+    dat <- read.csv(file=pipe(cmd), header=FALSE)
 
     invisible(dat)
 }
