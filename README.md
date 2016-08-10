@@ -10,6 +10,17 @@ In Progress, see _e.g._ the
 Currently, a basic R package is available, and can be installed. It
 tests cleanly against `R CMD check`.
 
+### Installation
+
+Straight from GitHub should work though make sure you have the
+[dependencies and suggests](https://github.com/DevProgress/RVertica/blob/master/DESCRIPTION#L11-L12)
+installed:
+
+```r
+if (!require("devtools")) install.packages("devtools")
+devtools::install_github("DevProgress/RVertica")
+```
+
 ### Demo
 
 #### Code
