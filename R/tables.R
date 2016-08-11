@@ -17,11 +17,18 @@ psqlCommand <- function(sqlcmd) {
 
 # Rscript -e 'library(RVertica); print(psqlCommand("create table sqltest (a numeric, b int, c varchar(20));"))'
 
-
+##' Write a data object to a table using \code{psql}
+##'
+##' Data is written via pipe into \code{psql} which reads the data and
+##' inserts it into the give table.  There is no error checking. Proof
+##' of concept.
+##' @title Write Data to a Table
+##' @param data A matrix or data.frame which is to be written
+##' @param table The name of existing table
+##' @return Nothing
+##' @author Dirk Eddelbuettel
 psqlCopy <- function(data, table) {
-
     cmd <- sprintf("%s -c \"COPY %s FROM STDIN USING DELIMITERS ',';\"", .pkgenv$psqlpath, table)
-print(cmd)
     write.table(data, file=pipe(cmd), row.names = FALSE, col.names = FALSE, sep=",")
-
+    invisible(NULL)
 }
