@@ -28,7 +28,7 @@ psqlCommand <- function(sqlcmd) {
 ##' @return Nothing
 ##' @author Dirk Eddelbuettel
 psqlCopy <- function(data, table) {
-    cmd <- sprintf("%s -c \"COPY %s FROM STDIN USING DELIMITERS ',';\"", .pkgenv$psqlpath, table)
+    cmd <- sprintf("%s -c \"COPY %s FROM STDIN USING DELIMITERS ',' ENCLOSED BY '\\\"';\"", .pkgenv$psqlpath, table)
     write.table(data, file=pipe(cmd), row.names = FALSE, col.names = FALSE, sep=",")
     invisible(NULL)
 }
